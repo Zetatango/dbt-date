@@ -1,6 +1,8 @@
 name: 'dbt_date'
 version: '0.1'
 
+config-version: 2
+
 target-path: "target"
 clean-targets: ["target", "dbt_modules"]
 macro-paths: ["macros"]
@@ -8,10 +10,12 @@ log-path: "logs"
 
 require-dbt-version: ">=0.14.0"
 profile: dev
+
 quoting:
     identifier: false
     schema: false
 
+vars:
+    'dbt_date:time_zone': 'America/New_York'
+
 models:
-    vars:
-        'dbt_date:time_zone': 'America/Los_Angeles'
